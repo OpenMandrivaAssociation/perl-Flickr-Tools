@@ -4,9 +4,10 @@ Version:	0.02
 Release:	%mkrel 1
 Group:		Development/Perl
 License:	GPL or Artistic
+URL:		http://search.cpan.org/~nfmnunes/Flickr-Tools-0.02/
 Source:		http://search.cpan.org/CPAN/authors/id/N/NF/NFMNUNES/Flickr-Tools-0.02.tar.gz
 BuildArch:	noarch
-BuildRequires:	perl-Flickr-API
+BuildRequires:	perl-Flickr-API perl-Test-MockObject
 Requires:	perl
 BuildRoot:	%{_tmppath}/%{name}-buildroot/
 %description
