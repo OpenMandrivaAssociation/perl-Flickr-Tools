@@ -1,15 +1,21 @@
-Name:		perl-Flickr-Tools
+%define upstream_name    Flickr-Tools
+%define upstream_version 0.02
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	A set of classes that can be used to work with Flickr
-Version:	0.02
-Release:	%mkrel 1
+License:	GPL+ or Artistic
 Group:		Development/Perl
-License:	GPL or Artistic
-URL:		http://search.cpan.org/~nfmnunes/Flickr-Tools-0.02/
-Source:		http://search.cpan.org/CPAN/authors/id/N/NF/NFMNUNES/Flickr-Tools-0.02.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://search.cpan.org/CPAN/authors/id/N/NF/NFMNUNES/%{upstream_name}-%{upstream_version}.tar.gz
+
+BuildRequires:	perl-Flickr-API
+BuildRequires:  perl-Test-MockObject
 BuildArch:	noarch
-BuildRequires:	perl-Flickr-API perl-Test-MockObject
-Requires:	perl
-BuildRoot:	%{_tmppath}/%{name}-buildroot/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
+
 %description
 These modules provide a set of classes that can be used to work with
 Flickr, using it's REST API, as provided by the Flickr::API.
@@ -20,7 +26,7 @@ which are easier and faster to use, while providing full access to all
 the functionality provided by Flickr.
 
 %prep
-%setup -q -n Flickr-Tools-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
