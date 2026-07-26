@@ -1,15 +1,13 @@
 %define upstream_name    Flickr-Tools
-%define upstream_version 1.22
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.22
+Release:	2
 
 Summary:	A set of classes that can be used to work with Flickr
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/lbmoore/perl-Flickr-Tools
-Source0:	https://cpan.metacpan.org/authors/id/L/LB/LBMOORE/Flickr-Tools-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/L/LB/LBMOORE/Flickr-Tools-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -27,7 +25,7 @@ which are easier and faster to use, while providing full access to all
 the functionality provided by Flickr.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -48,9 +46,7 @@ make test
 %changelog
 * Tue Aug 04 2009 Jérôme Quelin <jquelin@mandriva.org> 0.20.0-1mdv2010.0
 + Revision: 409308
-- rebuild using %%perl_convert_version
-
-* Mon Oct 13 2008 Nicolas Vigier <nvigier@mandriva.com> 0.02-1mdv2009.1
+- rebuild using %1.22 Mon Oct 13 2008 Nicolas Vigier <nvigier@mandriva.com> 0.02-1mdv2009.1
 + Revision: 293346
 - import perl-Flickr-Tools
 
